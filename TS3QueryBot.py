@@ -1,7 +1,7 @@
 # Code by TimoNiki
 # Copyright 2026 TimoNiki
 # TS3 is a TeamSpeak3
-
+# 37% of code by Ai
 
 import sys
 import threading
@@ -66,9 +66,9 @@ class TS3BotThread(threading.Thread):
                     channel_name=channel_name, 
                     channel_flag_semi_permanent=1
                 )
-                print(f"  [{self.bot_name}][+] Created channel: {channel_name}")
+                print(f"  [{self.bot_name}] Created channel: {channel_name}")
             except Exception as e:
-                print(f"  [{self.bot_name}][-] Failed to create channel {channel_name}: {e}")
+                print(f"  [{self.bot_name}] Failed to create channel {channel_name}: {e}")
         print(f"[{self.bot_name}] Command execution finished.")
 
     def get_channel_id_by_name(self, name):
@@ -95,9 +95,9 @@ class TS3BotThread(threading.Thread):
 
         try:
             self.connection.channeldelete(cid=cid, force=1)
-            print(f"  [{self.bot_name}][-] Successfully deleted channel: {name}")
+            print(f"  [{self.bot_name}] Successfully deleted channel: {name}")
         except Exception as e:
-            print(f"  [{self.bot_name}][-] Failed to delete channel {name}: {e}")
+            print(f"  [{self.bot_name}] Failed to delete channel {name}: {e}")
 
     def delete_multiple_channels(self, raw_args):
         if not self.connection:
